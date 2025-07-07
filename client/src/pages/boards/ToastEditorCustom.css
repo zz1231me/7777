@@ -1,0 +1,16 @@
+/* Toast UI Editor content 폰트 크기 오버라이드 */
+.toastui-editor-contents {
+  font-size: 1.1rem !important;   /* 약 17.6px */
+  line-height: 1.8 !important;
+}
+
+/* 제목(헤딩)도 같이 키우고 싶으면 */
+.toastui-editor-contents h1 {
+  font-size: 2rem !important;
+}
+.toastui-editor-contents h2 {
+  font-size: 1.5rem !important;
+}
+.toastui-editor-contents h3 {
+  font-size: 1.2rem !important;
+}

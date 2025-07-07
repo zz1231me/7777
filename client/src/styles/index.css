@@ -1,0 +1,66 @@
+/* C:\jamtori\client\src\styles\index.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🔧 Preflight 비활성화로 인한 cursor 문제 해결 */
+@layer base {
+  /* 클릭 가능한 요소들의 cursor 스타일 복원 */
+  button,
+  [role="button"],
+  [type="button"],
+  [type="submit"],
+  [type="reset"] {
+    cursor: pointer;
+  }
+
+  /* 링크 요소 cursor 복원 */
+  a,
+  [role="link"] {
+    cursor: pointer;
+  }
+
+  /* 비활성화된 요소는 기본 cursor */
+  button:disabled,
+  [role="button"][aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+
+  /* input 요소들의 cursor 복원 */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"],
+  input[type="url"],
+  input[type="tel"],
+  input[type="number"],
+  textarea,
+  select {
+    cursor: text;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    cursor: pointer;
+  }
+
+  /* 기본 body 스타일 */
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #FAFAFA;
+  }
+}
+
+/* 🔧 Tailwind utilities 확장 */
+@layer utilities {
+  .cursor-pointer {
+    cursor: pointer !important;
+  }
+  
+  .cursor-not-allowed {
+    cursor: not-allowed !important;
+  }
+}
