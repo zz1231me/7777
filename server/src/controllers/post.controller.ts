@@ -71,7 +71,7 @@ export const getPosts = async (req: AuthRequest, res: Response): Promise<void> =
     if (search) {
       whereCondition[Op.or] = [
         { title: { [Op.like]: `%${search}%` } },
-        { author: { [Op.like]: `%${search}%` } }
+        { content: { [Op.like]: `%${search}%` } }
       ];
     }
 
@@ -92,7 +92,8 @@ export const getPosts = async (req: AuthRequest, res: Response): Promise<void> =
         'id', 
         'title', 
         'createdAt', 
-        'author', 
+        'author',
+        'content',
         'UserId',
         [
           require('sequelize').literal(`(
